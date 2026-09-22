@@ -19,10 +19,7 @@ const About = () => {
   const themeColors = useThemeColors();
 
   const roles = [
-    'Software Engineer',
-    'Full-Stack Developer',
-    'Systems Engineer',
-    'Frontend Developer',
+    'Étudiante en deuxième année de BUT Informatique à Grenoble',
   ];
 
   const profileImages = [
@@ -217,7 +214,7 @@ const About = () => {
               </div>
               <div className="hero-subtitle justify-start text-base md:text-lg lg:text-xl mt-2">
                 <div className="flex flex-wrap items-center justify-start">
-                  <span className={isDarkMode ? 'hero-subtitle-dark' : 'hero-subtitle-light'}>I am a&nbsp;</span>
+                  <span className={isDarkMode ? 'hero-subtitle-dark' : 'hero-subtitle-light'}></span>
                   <TypewriterCarousel roles={roles} className={isDarkMode ? 'hero-subtitle-dark' : 'hero-subtitle-light'} />
                 </div>
               </div>
