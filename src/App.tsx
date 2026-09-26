@@ -1,6 +1,7 @@
 import { lazy, Suspense } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { DarkModeProvider, useDarkMode } from './contexts/DarkModeContext'
+import { LanguageProvider } from './contexts/LanguageContext'
 import { useThemeColors } from './hooks/useThemeColors'
 import { colors } from './styles/colors'
 import Navigation from './components/section/Navigation'
@@ -112,7 +113,9 @@ function AppContent() {
 function App() {
   return (
     <DarkModeProvider>
-      <AppContent />
+      <LanguageProvider>
+        <AppContent />
+      </LanguageProvider>
     </DarkModeProvider>
   )
 }

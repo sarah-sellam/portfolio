@@ -3,6 +3,7 @@ import { Menu, X } from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import DarkModeToggle from '../DarkModeToggle';
 import { useDarkMode } from '../../contexts/DarkModeContext';
+import { useLanguage } from '../../contexts/LanguageContext';
 import { useThemeColors, withAlpha } from '../../hooks/useThemeColors';
 
 const Navigation = () => {
@@ -10,16 +11,17 @@ const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { isDarkMode, toggleDarkMode } = useDarkMode();
+  const { lang, toggleLanguage, t } = useLanguage();
   const themeColors = useThemeColors();
   const navigate = useNavigate();
   const location = useLocation();
 
   const tabs = useMemo(() => [
-    { id: 'about', label: 'About' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'experience', label: 'Experience' },
-    { id: 'skills', label: 'Skills' }
-  ], []);
+    { id: 'about', label: t({ fr: 'À propos', en: 'About' }) },
+    { id: 'projects', label: t({ fr: 'Projets', en: 'Projects' }) },
+    { id: 'experience', label: t({ fr: 'Expérience', en: 'Experience' }) },
+    { id: 'skills', label: t({ fr: 'Compétences', en: 'Skills' }) }
+  ], [lang]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -131,7 +133,23 @@ const Navigation = () => {
               {tab.label}
             </button>
           ))}
-          <div className="ml-4">
+          <div className="ml-4 flex items-center gap-3">
+            <button
+              onClick={toggleLanguage}
+              aria-label={lang === 'fr' ? 'Switch to English' : 'Passer en français'}
+              style={{
+                color: themeColors.colors.pink[500],
+                border: `1px solid ${themeColors.colors.pink[200]}`,
+                borderRadius: '8px',
+                padding: '4px 10px',
+                fontSize: '0.85rem',
+                fontWeight: 600,
+                background: 'none',
+                cursor: 'pointer',
+              }}
+            >
+              {lang === 'fr' ? 'EN' : 'FR'}
+            </button>
             <DarkModeToggle
               checked={isDarkMode}
               onChange={toggleDarkMode}
@@ -267,8 +285,25 @@ const Navigation = () => {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
+            gap: '1rem',
           }}
         >
+          <button
+            onClick={toggleLanguage}
+            aria-label={lang === 'fr' ? 'Switch to English' : 'Passer en français'}
+            style={{
+              color: themeColors.colors.pink[500],
+              border: `1px solid ${themeColors.colors.pink[200]}`,
+              borderRadius: '8px',
+              padding: '6px 12px',
+              fontSize: '0.9rem',
+              fontWeight: 600,
+              background: 'none',
+              cursor: 'pointer',
+            }}
+          >
+            {lang === 'fr' ? 'EN' : 'FR'}
+          </button>
           <DarkModeToggle
             checked={isDarkMode}
             onChange={toggleDarkMode}
