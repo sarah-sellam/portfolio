@@ -14,6 +14,8 @@ import dividerPng from './divider.PNG';
 import dividerWebp from './divider-original.webp';
 import divider from './divider-original.webp';
 
+import profile from './profile.jpg';
+
 // For backward compatibility
 const aboutMeJournal = aboutMeJournalPng;
 
@@ -36,6 +38,7 @@ export const mainAssets = {
   divider,
   dividerPng,
   dividerWebp,
+  profile,
 };
 
 export {
@@ -50,6 +53,7 @@ export {
   divider,
   dividerPng,
   dividerWebp,
+  profile,
 };
 
 export default {

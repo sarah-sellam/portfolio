@@ -4,8 +4,9 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import AsciiMorphText from '../AsciiMorphText';
 import TypewriterCarousel from '../TypewriterCarousel';
 import { useDarkMode } from '../../contexts/DarkModeContext';
+import { useLanguage } from '../../contexts/LanguageContext';
 import { useThemeColors, withAlpha } from '../../hooks/useThemeColors';
-import { aboutMeJournalWebp800, aboutMeJournalWebp400, profile1, profile2, profile3, stickers as stickerImages } from '../../assets';
+import { aboutMeJournalWebp800, aboutMeJournalWebp400, profile, profile1, profile2, profile3, stickers as stickerImages } from '../../assets';
 
 
 const About = () => {
@@ -17,6 +18,7 @@ const About = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const { isDarkMode } = useDarkMode();
   const themeColors = useThemeColors();
+  const { t } = useLanguage()
 
   const roles = [
     'Étudiante en deuxième année de BUT Informatique à Grenoble',
@@ -207,18 +209,28 @@ const About = () => {
       {/* Hero Section */}
       <div className="py-10 md:py-20">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="flex flex-col md:flex-row justify-between items-start max-w-6xl mx-auto gap-8">
-            <div className="text-left w-full md:w-auto">
-              <div className="ascii-container justify-start text-3xl md:text-4xl lg:text-5xl">
+          <div className="flex flex-col md:flex-row justify-between items-center md:items-start max-w-6xl mx-auto gap-6 md:gap-8 flex-nowrap">
+
+            {/* Photo : en premier sur mobile (au-dessus du nom), à droite sur desktop grâce à order-3 */}
+            <img
+              src={profile}
+              alt={t({ fr: 'Portrait', en: 'Profile' })}
+              className="order-1 md:order-3 w-32 sm:w-40 md:w-[180px] flex-shrink-0 rounded-2xl shadow-xl object-cover"
+              style={{ aspectRatio: '4 / 5' }}
+            />
+
+            {/* Bloc texte : toujours en second visuellement */}
+            <div className="order-2 text-center md:text-left w-full flex-1 min-w-0">
+              <div className="ascii-container justify-center md:justify-start text-3xl md:text-4xl lg:text-5xl">
                 <AsciiMorphText text="Sarah Sellam" />
               </div>
-              <div className="hero-subtitle justify-start text-base md:text-lg lg:text-xl mt-2">
-                <div className="flex flex-wrap items-center justify-start">
+              <div className="hero-subtitle justify-center md:justify-start text-base md:text-lg lg:text-xl mt-2">
+                <div className="flex flex-wrap items-center justify-center md:justify-start">
                   <span className={isDarkMode ? 'hero-subtitle-dark' : 'hero-subtitle-light'}></span>
                   <TypewriterCarousel roles={roles} className={isDarkMode ? 'hero-subtitle-dark' : 'hero-subtitle-light'} />
                 </div>
               </div>
-              <div className="hero-buttons flex justify-start gap-3 mt-4">
+              <div className="hero-buttons flex justify-center md:justify-start gap-3 mt-4">
                 <button
                   className="hero-action-btn text-sm md:text-base px-4 py-2 md:px-5 md:py-2.5"
                   onClick={() => {
@@ -235,12 +247,26 @@ const About = () => {
                 </Link>
               </div>
             </div>
-            <div className="hidden md:block" style={{ fontSize: '0.8rem', lineHeight: '1', fontFamily: 'monospace', minHeight: '150px', color: isDarkMode ? themeColors.primary : themeColors.colors.pink[500] }}>
+
+            {/* Dessin ASCII : masqué sur mobile, visible seulement à partir de md */}
+            <div
+              className="hidden md:block order-4 flex-shrink-0 self-end"
+              style={{
+                fontSize: '0.8rem',
+                lineHeight: '1',
+                fontFamily: 'monospace',
+                minHeight: '150px',
+                width: '220px',
+                color: isDarkMode ? themeColors.primary : themeColors.colors.pink[500]
+              }}
+            >
               <pre>{asciiText}</pre>
             </div>
+
           </div>
         </div>
       </div>
+
 
       {/* About Section with Stickers and Journal */}
       <div className="py-8 md:py-12" style={{
@@ -334,9 +360,8 @@ const About = () => {
                     key={index}
                     src={image.src}
                     alt={`Profile photo ${index + 1}`}
-                    className={`absolute w-full h-full object-contain transition-opacity duration-500 ${
-                      index === currentImageIndex ? 'opacity-100' : 'opacity-0'
-                    }`}
+                    className={`absolute w-full h-full object-contain transition-opacity duration-500 ${index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+                      }`}
                     loading="eager"
                     onError={(e) => {
                       console.error('Image failed to load:', image.src);
@@ -420,7 +445,7 @@ const About = () => {
             {/* Close Button */}
             <button
               className="absolute top-4 right-4 text-white rounded-full w-11 h-11 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:rotate-90"
-              style={{ 
+              style={{
                 backgroundColor: themeColors.colors.pink[500],
                 transition: 'all 0.3s'
               }}
