@@ -14,7 +14,7 @@ import dividerPng from './divider.PNG';
 import dividerWebp from './divider-original.webp';
 import divider from './divider-original.webp';
 
-import profile from './profile.jpg';
+import profile from './profile.JPG';
 
 // For backward compatibility
 const aboutMeJournal = aboutMeJournalPng;
