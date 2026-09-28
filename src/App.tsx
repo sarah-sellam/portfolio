@@ -14,6 +14,7 @@ import './App.css'
 const Contact = lazy(() => import('./pages/Contact'))
 
 // Lazy load below-the-fold components for better initial load
+const AboutText = lazy(() => import('./components/section/AboutText'))
 const Projects = lazy(() => import('./components/section/Projects'))
 const Experience = lazy(() => import('./components/section/Experience'))
 const Skills = lazy(() => import('./components/section/Skills'))
@@ -27,6 +28,9 @@ function HomePage() {
   return (
     <>
       <About />
+      <Suspense fallback={<div className="h-64 flex items-center justify-center">Loading...</div>}>
+        <AboutText />
+      </Suspense>
       <Suspense fallback={<div className="h-screen flex items-center justify-center">Loading...</div>}>
         <Projects />
       </Suspense>
@@ -50,11 +54,11 @@ function HomePage() {
           }}
         />
         {/* Bottom gradient overlay to blend with Skills section */}
-        <div 
+        <div
           className="absolute bottom-0 left-0 right-0 pointer-events-none"
           style={{
             height: '200px',
-            background: isDarkMode 
+            background: isDarkMode
               ? `linear-gradient(180deg, transparent 0%, ${themeColors.background.gradientEnd} 100%)`
               : `linear-gradient(180deg, transparent 0%, ${themeColors.colors.pink[25]} 100%)`,
             zIndex: 1
