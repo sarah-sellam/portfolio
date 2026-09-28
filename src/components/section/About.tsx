@@ -1,10 +1,10 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import AsciiMorphText from '../AsciiMorphText';
 import TypewriterCarousel from '../TypewriterCarousel';
 import { useDarkMode } from '../../contexts/DarkModeContext';
 import { useLanguage } from '../../contexts/LanguageContext';
-import { useThemeColors, withAlpha } from '../../hooks/useThemeColors';
+import { useThemeColors } from '../../hooks/useThemeColors';
 import { profile } from '../../assets';
 
 
@@ -30,7 +30,26 @@ const About = () => {
 ⠀⠀⠀⠀⠀⢻⣄⣠⣤⣴⠟⠛⠛⠛⢧⣤⣤⣀⡾⠀⠀⠀⠀⠀`;
 
   // Typewriter effect for ASCII art
-  
+  useEffect(() => {
+    let currentIndex = 0;
+    const typingSpeed = 3; // Speed in milliseconds
+
+    const typeWriter = () => {
+      if (currentIndex < fullAsciiArt.length) {
+        setAsciiText(fullAsciiArt.substring(0, currentIndex + 1));
+        currentIndex++;
+        setTimeout(typeWriter, typingSpeed);
+      }
+    };
+
+    // Start typing after a small delay
+    const startDelay = setTimeout(() => {
+      typeWriter();
+    }, 500);
+
+    return () => clearTimeout(startDelay);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []); // Only run once on mount
 
 
   return (
