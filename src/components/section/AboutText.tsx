@@ -225,7 +225,7 @@ const AboutText = () => {
       {/* Profile Modal */}
       {showProfileModal && (
         <div
-          className={`fixed inset-0 z-50 flex items-center justify-center p-2 md:p-4 ${isClosing ? 'animate-fadeOut' : 'animate-fadeIn'}`}
+          className={`fixed inset-0 z-[100000] flex items-center justify-center p-2 md:p-4 ${isClosing ? 'animate-fadeOut' : 'animate-fadeIn'}`}
           style={{ backgroundColor: themeColors.background.overlay }}
           onClick={() => {
             setIsClosing(true);
