@@ -12,28 +12,6 @@ interface EducationItem {
 
 const education: EducationItem[] = [
     {
-        period: '2024',
-        degree: { fr: 'Baccalauréat général', en: 'High School Diploma' },
-        school: { fr: 'Lycée Aristide Bergès', en: 'Aristide Bergès High School' },
-        location: { fr: 'Seyssinet-Pariset, France', en: 'Seyssinet-Pariset, France' },
-        details: [
-            { fr: 'Mention Bien', en: 'High honours' },
-            { fr: 'Mathématiques, Physique-Chimie et Numérique et Sciences Informatiques', en: 'Mathematics, Physics and Chemistry, and Computer Science' }
-        ],
-    },
-    {
-        period: '2024 – 2025',
-        degree: { fr: 'Première année de classe préparatoire', en: "First year of preparatory course" },
-        school: { fr: 'La Prépa intégrée des INP', en: 'INP\'s integrated preparatory course' },
-        location: { fr: 'Grenoble', en: 'Grenoble' },
-    },
-    {
-        period: '2025 – 2026',
-        degree: { fr: 'Première année de BUT Informatique', en: "First year of Bachelor's degree in Computer Science" },
-        school: { fr: 'IUT2', en: 'IUT2' },
-        location: { fr: 'Grenoble', en: 'Grenoble' },
-    },
-    {
         period: '2026 – 2027',
         degree: { fr: 'Deuxième année de BUT Informatique', en: "Second year of Bachelor's degree in Computer Science" },
         school: { fr: 'IUT2', en: 'IUT2' },
@@ -44,6 +22,28 @@ const education: EducationItem[] = [
             en: 'Course : Deployment of Secure, Connected Applications' }
         ],
     },
+    {
+        period: '2025 – 2026',
+        degree: { fr: 'Première année de BUT Informatique', en: "First year of Bachelor's degree in Computer Science" },
+        school: { fr: 'IUT2', en: 'IUT2' },
+        location: { fr: 'Grenoble', en: 'Grenoble' },
+    },
+    {
+        period: '2024 – 2025',
+        degree: { fr: 'Première année de classe préparatoire', en: "First year of preparatory course" },
+        school: { fr: 'La Prépa intégrée des INP', en: 'INP\'s integrated preparatory course' },
+        location: { fr: 'Grenoble', en: 'Grenoble' },
+    }, 
+    {
+        period: '2024',
+        degree: { fr: 'Baccalauréat général', en: 'High School Diploma' },
+        school: { fr: 'Lycée Aristide Bergès', en: 'Aristide Bergès High School' },
+        location: { fr: 'Seyssinet-Pariset, France', en: 'Seyssinet-Pariset, France' },
+        details: [
+            { fr: 'Mention Bien', en: 'High honours' },
+            { fr: 'Mathématiques, Physique-Chimie et Numérique et Sciences Informatiques', en: 'Mathematics, Physics and Chemistry, and Computer Science' }
+        ],
+    },   
 ]
 
 export default function Education() {
