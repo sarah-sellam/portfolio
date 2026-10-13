@@ -84,7 +84,7 @@ const Experience = () => {
                     <CardTitle className="text-2xl" style={{ color: isDarkMode ? themeColors.colors.pink[300] : themeColors.colors.pink[400] }}>{exp.title}</CardTitle>
                     <p className="text-lg font-semibold text-gray-700 dark:text-gray-400 mt-1">{exp.company}</p>
                   </div>
-                  <div className="text-right">
+                  <div className="text-left">
                     <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400 mb-1">
                       <Calendar className="h-4 w-4" />
                       <span className="text-sm">{exp.period}</span>
