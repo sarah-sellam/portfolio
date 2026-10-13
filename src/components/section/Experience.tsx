@@ -13,7 +13,7 @@ const Experience = () => {
       title: t({ fr: 'Stage de programmation', en: 'Programming course' }),
       company: t({ fr: 'Lycée Aristide Bergès', en: 'Aristide Bergès High School'}),
       location: t({ fr: 'Seyssinet-Pariset, France', en: 'Seyssinet-Pariset, France'}),
-      period: t({ fr: 'Juin 2022 - 2 semaines', en: 'June 2022 - 2 weeks'}),
+      period: t({ fr: 'Juin 2022', en: 'June 2022'}),
       description: [
         t({ fr: 'Programmation du Rover TI et de cartes de type Adafruit Playground et Pyboard', 
           en: 'Programming the TI Rover and boards such as the Adafruit Playground and Pyboard'}),
@@ -23,7 +23,7 @@ const Experience = () => {
       title: t({ fr: 'Agent polyvalent en cuisine centrale', en: 'All-round kitchen assistant' }),
       company: t({ fr: 'Cuisine centrale', en: 'Central kitchen'}),
       location: t({ fr: 'Saint-Martin-d\'Hères, France', en: 'Saint-Martin-d\'Hères, France'}),
-      period: t({ fr: 'Août 2024 - 1 semaine', en: 'August 2024 - 1 week'}),
+      period: t({ fr: 'Août 2024', en: 'August 2024'}),
       description: [
         t({ fr: 'Respect strict des règles d\'hygiène et de sécurité', 
           en: 'Strict adherence to security and hygiene regulations'}),
@@ -35,7 +35,7 @@ const Experience = () => {
       title: t({ fr: 'Stage d\'observation en entreprise', en: 'Work experience placement' }),
       company: t({ fr: 'Tabac Loto Presse Totem', en: 'Loto Presse Totem tobacconist\'s'}),
       location: t({ fr: 'Fontaine, France', en: 'Fontaine, France'}),
-      period: t({ fr: 'Mars 2021 - 1 semaine', en: 'March 2021 - 1 week'}),
+      period: t({ fr: 'Mars 2021', en: 'March 2021'}),
       description: [
         t({ fr: 'Réception, vérification, rangement et remise des colis aux clients (point relais)', 
           en: 'Receiving, checking, storing and handing over parcels to customers (collection point)'}),
