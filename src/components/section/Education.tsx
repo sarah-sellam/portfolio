@@ -12,8 +12,8 @@ interface EducationItem {
 
 const education: EducationItem[] = [
     {
-        period: '2026 – 2027',
-        degree: { fr: 'Deuxième année de BUT Informatique', en: "Second year of Bachelor's degree in Computer Science" },
+        period: '2025 – 2028',
+        degree: { fr: 'BUT Informatique', en: "Bachelor's degree in Computer Science" },
         school: { fr: 'IUT2', en: 'IUT2' },
         location: { fr: 'Grenoble', en: 'Grenoble' },
         details: [{ fr: 'Réseaux et cybersécurité', 
@@ -21,12 +21,6 @@ const education: EducationItem[] = [
         { fr: 'Parcours : Déploiement d\'Applications Communicantes et Sécurisées', 
             en: 'Course : Deployment of Secure, Connected Applications' }
         ],
-    },
-    {
-        period: '2025 – 2026',
-        degree: { fr: 'Première année de BUT Informatique', en: "First year of Bachelor's degree in Computer Science" },
-        school: { fr: 'IUT2', en: 'IUT2' },
-        location: { fr: 'Grenoble', en: 'Grenoble' },
     },
     {
         period: '2024 – 2025',
