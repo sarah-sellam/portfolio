@@ -166,8 +166,11 @@ const AboutText = () => {
             className="space-y-4 text-base md:text-lg leading-relaxed mt-6 max-w-3xl mx-auto text-center"
             style={{ color: isDarkMode ? themeColors.colors.pink[100] : themeColors.colors.dark[600] }}
           >
-            <p>{t({ fr: 'Premier paragraphe…', en: 'First paragraph…' })}</p>
-            <p>{t({ fr: 'Second paragraphe…', en: 'Second paragraph…' })}</p>
+            <p>{t({ fr: 'Étudiante en deuxième année de BUT Informatique à l’IUT2 de Grenoble, en parcours Déploiement d’applications communicantes et sécurisées, j’aime comprendre le fonctionnement des systèmes informatiques et les réseaux, les construire de manière fiable et résoudre des problèmes techniques.',
+               en: 'I am a second-year student on the Bachelor’s degree in Computer Science programme at IUT2 in Grenoble, specialising in the Deployment of Secure Communication Applications. I enjoy understanding how computer systems and networks work, building them reliably and solving technical problems.' })}</p>
+            <p>{t({ fr: 'Je recherche un stage de 8 à 12 semaines, à partir du 19 avril 2027 (prolongeable), dans les domaines des réseaux, de la cybersécurité et des systèmes connectés.',
+               en: 'I am looking for an 8- to 12-week internship, starting April 19, 2027 (with the possibility of extension), in the fields of networking, cybersecurity, and connected systems.' })}</p>
+            
           </div>
         </div>
 
