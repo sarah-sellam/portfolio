@@ -26,7 +26,7 @@ const About = () => {
       contain: 'layout style'
     }}>
       {/* Hero Section */}
-      <div className="py-10 md:py-20">
+      <div className="py-10 md:py-10">
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col md:flex-row justify-between items-center md:items-start max-w-6xl mx-auto gap-6 md:gap-8 flex-nowrap">
 
