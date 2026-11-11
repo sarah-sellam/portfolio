@@ -10,10 +10,13 @@ import { profile } from '../../assets';
 const About = () => {
   const { isDarkMode } = useDarkMode();
   const themeColors = useThemeColors();
-  const { t } = useLanguage()
+  const { t, lang } = useLanguage()
 
   const roles = [
-    'Étudiante en deuxième année de BUT Informatique à Grenoble',
+    t({
+    fr: 'Étudiante en deuxième année de BUT Informatique à Grenoble',
+    en: 'Second-year Computer Science student (BUT Informatique) in Grenoble',
+  }),
   ];
 
 
@@ -46,7 +49,7 @@ const About = () => {
               <div className="hero-subtitle justify-center md:justify-start text-base md:text-lg lg:text-xl mt-2">
                 <div className="flex flex-wrap items-center justify-center md:justify-start">
                   <span className={isDarkMode ? 'hero-subtitle-dark' : 'hero-subtitle-light'}></span>
-                  <TypewriterCarousel roles={roles} className={isDarkMode ? 'hero-subtitle-dark' : 'hero-subtitle-light'} />
+                  <TypewriterCarousel key={lang} roles={roles} className={isDarkMode ? 'hero-subtitle-dark' : 'hero-subtitle-light'} />
                 </div>
               </div>
               <div className="hero-buttons flex justify-center md:justify-start gap-3 mt-4">
