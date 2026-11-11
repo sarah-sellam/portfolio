@@ -174,7 +174,11 @@ const AboutText = () => {
           </div>
         </div>
 
+{/* Stickers + journal disabled : remove "false &&" to reactivate */}
+
         {/* About Section with Stickers and Journal */}
+{ false && (
+
         <div className="py-8 md:py-12" style={{
           background: isDarkMode
             ? 'transparent'
@@ -223,6 +227,8 @@ const AboutText = () => {
             </div>
           </div>
         </div>
+)}
+
       </div>
 
       {/* Profile Modal */}
