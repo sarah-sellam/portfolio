@@ -15,7 +15,8 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   const [lang, setLang] = useState<Lang>(() => {
     const saved = localStorage.getItem('lang')
     if (saved === 'fr' || saved === 'en') return saved
-    return navigator.language.startsWith('fr') ? 'fr' : 'en'
+    /*return navigator.language.startsWith('fr') ? 'fr' : 'en'*/
+    return 'fr'
   })
 
   useEffect(() => {
