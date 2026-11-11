@@ -56,13 +56,13 @@ const About = () => {
                     window.open(`${import.meta.env.BASE_URL}resume.pdf`, '_blank');
                   }}
                 >
-                  Resume →
+                  {t({ fr: 'CV →', en: 'Resume →' })}
                 </button>
                 <Link
                   to="/contact"
                   className="hero-action-btn text-sm md:text-base px-4 py-2 md:px-5 md:py-2.5"
                 >
-                  Contact →
+                  {t({ fr: 'Contact →', en: 'Contact →' })}
                 </Link>
               </div>
             </div>
