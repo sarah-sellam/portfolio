@@ -18,7 +18,7 @@ const AboutText = lazy(() => import('./components/section/AboutText'))
 const Projects = lazy(() => import('./components/section/Projects'))
 const Experience = lazy(() => import('./components/section/Experience'))
 const Skills = lazy(() => import('./components/section/Skills'))
-const Certifications = lazy(() => import('./components/section/Certifications'))
+// const Certifications = lazy(() => import('./components/section/Certifications'))
 const Education = lazy(() => import('./components/section/Education'))
 const Footer = lazy(() => import('./components/Footer'))
 
@@ -82,9 +82,12 @@ function HomePage() {
       <Suspense fallback={<div className="h-screen flex items-center justify-center">Loading...</div>}>
         <Skills />
       </Suspense>
+      {/*
       <Suspense fallback={<div className="h-64 flex items-center justify-center">Loading...</div>}>
         <Certifications />
       </Suspense>
+      */}
+      
     </>
   )
 }
