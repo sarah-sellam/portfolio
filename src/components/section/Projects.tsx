@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '../../contexts/LanguageContext';
 import { useDarkMode } from '../../contexts/DarkModeContext';
 import { useThemeColors } from '../../hooks/useThemeColors';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../ui/card';
@@ -13,7 +14,7 @@ import { comingSoon } from '../../assets';
 const Projects = () => {
   const { isDarkMode } = useDarkMode();
   const themeColors = useThemeColors();
-
+  const { t } = useLanguage();
   // track all the random background stars
   const [stars, setStars] = useState<Array<{ id: number; x: number; y: number; image: string; isDragging: boolean }>>([]);
   const [draggedStar, setDraggedStar] = useState<number | null>(null);
@@ -418,7 +419,9 @@ const Projects = () => {
       <TooltipProvider delayDuration={200}>
         <div className="container mx-auto px-6 relative z-10">
           <div className="flex items-center justify-center gap-1 mb-4">
-            <h2 className="text-4xl font-bold" style={{ color: isDarkMode ? themeColors.colors.white : themeColors.colors.pink[500] }}>Projects</h2>
+            <h2 className="text-4xl font-bold" style={{ color: isDarkMode ? themeColors.colors.white : themeColors.colors.pink[500] }}>
+              {t({ fr: 'Projets', en: 'Projects' })}
+              </h2>
             <Tooltip>
               <TooltipTrigger asChild>
                 <button 
@@ -441,7 +444,10 @@ const Projects = () => {
             </Tooltip>
           </div>
           <p className="text-center mb-12 text-lg text-gray-600 dark:text-gray-300">
-            Here are some of the projects I've worked on recently
+            {t({ 
+              fr: 'Voici quelques-uns des projets sur lesquels j\'ai travaillé récemment', 
+              en: 'Here are some of the projects I\'ve worked on recently' 
+              })}
           </p>
 
           {/* grid layout for project cards */}
@@ -529,7 +535,11 @@ const Projects = () => {
                         Coming Soon
                       </CardTitle>
                       <CardDescription className="text-gray-600 dark:text-gray-300 mt-2">
-                        More exciting projects on the way! Check back soon to see what I'm working on next.
+                        {t({ 
+                          fr: 'D\'autres projets passionnants sont à venir ! Revenez bientôt pour découvrir ce sur quoi je vais travailler ensuite.', 
+                          en: 'More exciting projects on the way! Check back soon to see what I\'m working on next.' 
+                          })}
+                        
                       </CardDescription>
                     </div>
                   </div>
