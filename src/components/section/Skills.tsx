@@ -2,6 +2,33 @@ import { useDarkMode } from '../../contexts/DarkModeContext';
 import { useThemeColors } from '../../hooks/useThemeColors';
 import { useLanguage, type Localized } from '../../contexts/LanguageContext';
 
+import python from '../../assets/techstack/Python.svg';
+import java from '../../assets/techstack/Java-Light.svg';
+import javaFX from '../../assets/techstack/JavaFX.png';
+import c from '../../assets/techstack/C.svg';
+import cplusplus from '../../assets/techstack/C-plus-plus.svg';
+//import php from '../../assets/techstack/.svg';
+//import r from '../../assets/techstack/R.svg';
+
+import html from '../../assets/techstack/HTML.svg';
+import css from '../../assets/techstack/CSS.svg';
+
+import linux from '../../assets/techstack/Linux.svg';
+import windows from '../../assets/techstack/Windows.svg';
+
+import postgresql from '../../assets/techstack/Postgresql.svg';
+
+import github from '../../assets/techstack/Github-Light.svg';
+import intellijidea from '../../assets/techstack/IntelliJIdea.svg';
+import vscode from '../../assets/techstack/VSCode.svg';
+import notion from '../../assets/techstack/Notion-Light.svg';
+
+import microsoftOffice from '../../assets/techstack/Microsoft-office.svg';
+import googleWorkspace from '../../assets/techstack/Google.svg';
+import libreOffice from '../../assets/techstack/LibreOffice.svg';
+
+import car from '../../assets/techstack/Car.svg';
+
 interface Skill {
   name: Localized
   subtitle?: Localized
@@ -20,52 +47,54 @@ const skillGroups: SkillGroup[] = [
   {
     title: { fr: 'Programmation', en: 'Programming' },
     skills: [
-      { name: same('Python') },
-      { name: same('Java') },
-      { name: same('C') },
+      { name: same('Python'), icon: python },
+      { name: same('Java'), icon: java },
+      { name: same('JavaFX'), icon: javaFX },
+      { name: same('C'), icon: c },
+      { name: same('C++'), icon: cplusplus },
     ],
   },
   {
     title: { fr: 'Développement web', en: 'Web development' },
     skills: [
-      { name: same('HTML / CSS') },
-      { name: same('JavaScript') },
-      { name: same('React') },
+      { name: same('HTML5'), icon: html },
+      { name: same('CSS3'), icon: css },
     ],
   },
   {
     title: { fr: 'Systèmes', en: 'Systems' },
     skills: [
-      { name: same('Linux') },
-      { name: same('Windows') },
+      { name: same('Linux'), icon: linux },
+      { name: same('Windows'), icon: windows },
     ],
   },
   {
     title: { fr: 'Bases de données', en: 'Databases' },
     skills: [
-      { name: same('SQL') },
-      { name: same('PostgreSQL') },
+      { name: same('PostgreSQL'), icon: postgresql },
     ],
   },
   {
     title: { fr: 'Outils', en: 'Tools' },
     skills: [
-      { name: same('Git / GitHub') },
-      { name: same('VS Code') },
+      { name: same('Git / GitHub'), icon: github },
+      { name: same('IntelliJ IDEA'), icon: intellijidea },
+      { name: same('VS Code'), icon: vscode },
+      { name: same('Notion'), icon: notion },
     ],
   },
   {
     title: { fr: 'Bureautique', en: 'Office software' },
     skills: [
-      { name: same('Word') },
-      { name: same('Excel') },
-      { name: same('PowerPoint') },
+      { name: same('Microsoft Office'), icon: microsoftOffice },
+      { name: same('Google Workspace'), icon: googleWorkspace },
+      { name: same('LibreOffice'), icon: libreOffice },
     ],
   },
   {
     title: { fr: 'Permis', en: 'Driving licence' },
     skills: [
-      { name: { fr: 'Permis B', en: 'Category B licence' } },
+      { name: { fr: 'Permis B', en: 'Category B licence' }, icon: car },
     ],
   },
 ];
