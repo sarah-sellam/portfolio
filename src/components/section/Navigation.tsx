@@ -19,8 +19,8 @@ const Navigation = () => {
   const tabs = useMemo(() => [
     { id: 'about', label: t({ fr: 'À propos', en: 'About' }) },
     { id: 'projects', label: t({ fr: 'Projets', en: 'Projects' }) },
-    { id: 'experience', label: t({ fr: 'Expérience', en: 'Experience' }) },
     { id: 'skills', label: t({ fr: 'Compétences', en: 'Skills' }) },
+    { id: 'experience', label: t({ fr: 'Expérience', en: 'Experience' }) },
     { id: 'education', label: t({ fr: 'Formation', en: 'Education' }) }
   ], [lang]);
 

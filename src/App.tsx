@@ -35,6 +35,9 @@ function HomePage() {
       <Suspense fallback={<div className="h-screen flex items-center justify-center">Loading...</div>}>
         <Projects />
       </Suspense>
+      <Suspense fallback={<div className="h-screen flex items-center justify-center">Loading...</div>}>
+        <Skills />
+      </Suspense>
       <Suspense fallback={<div className="h-64 flex items-center justify-center">Loading...</div>}>
         <Experience />
       </Suspense>
@@ -79,14 +82,14 @@ function HomePage() {
           loading="lazy"
         />
       </div>
-      <Suspense fallback={<div className="h-screen flex items-center justify-center">Loading...</div>}>
-        <Skills />
-      </Suspense>
       {/*
       <Suspense fallback={<div className="h-64 flex items-center justify-center">Loading...</div>}>
         <Certifications />
       </Suspense>
       */}
+      <Suspense fallback={<div className="h-96 flex items-center justify-center">Loading...</div>}>
+          <Education />
+        </Suspense>
       
     </>
   )
@@ -110,9 +113,6 @@ function AppContent() {
             </Routes>
           </Suspense>
         </main>
-        <Suspense fallback={<div className="h-96 flex items-center justify-center">Loading...</div>}>
-          <Education />
-        </Suspense>
         <Suspense fallback={<div className="h-32 flex items-center justify-center">Loading...</div>}>
           <Footer />
         </Suspense>
