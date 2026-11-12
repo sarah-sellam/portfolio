@@ -7,8 +7,10 @@ import java from '../../assets/techstack/Java-Light.svg';
 import javaFX from '../../assets/techstack/JavaFX.png';
 import c from '../../assets/techstack/C.svg';
 import cplusplus from '../../assets/techstack/C-plus-plus.svg';
-//import php from '../../assets/techstack/.svg';
-//import r from '../../assets/techstack/R.svg';
+import phpLight from '../../assets/techstack/Php_light.svg';
+import phpDark from '../../assets/techstack/Php_dark.svg';
+import rLight from '../../assets/techstack/R_light.svg';
+import rDark from '../../assets/techstack/R_dark.svg';
 
 import html from '../../assets/techstack/HTML.svg';
 import css from '../../assets/techstack/CSS.svg';
@@ -21,6 +23,7 @@ import postgresql from '../../assets/techstack/Postgresql.svg';
 import github from '../../assets/techstack/Github-Light.svg';
 import intellijidea from '../../assets/techstack/IntelliJIdea.svg';
 import vscode from '../../assets/techstack/VSCode.svg';
+import rstudio from '../../assets/techstack/RStudio.svg';
 import notion from '../../assets/techstack/Notion-Light.svg';
 
 import microsoftOffice from '../../assets/techstack/Microsoft-office.svg';
@@ -33,6 +36,7 @@ interface Skill {
   name: Localized
   subtitle?: Localized
   icon?: string // optionnel : image importée (voir src/assets/techstack)
+  iconDark?: string;
 }
 
 interface SkillGroup {
@@ -52,6 +56,8 @@ const skillGroups: SkillGroup[] = [
       { name: same('JavaFX'), icon: javaFX },
       { name: same('C'), icon: c },
       { name: same('C++'), icon: cplusplus },
+      { name: same('PHP'), icon: phpLight, iconDark: phpDark },
+      { name: same('R'), icon: rLight, iconDark: rDark },
     ],
   },
   {
@@ -80,6 +86,7 @@ const skillGroups: SkillGroup[] = [
       { name: same('Git / GitHub'), icon: github },
       { name: same('IntelliJ IDEA'), icon: intellijidea },
       { name: same('VS Code'), icon: vscode },
+      { name: same('RStudio'), icon: rstudio },
       { name: same('Notion'), icon: notion },
     ],
   },
@@ -136,7 +143,7 @@ const Skills = () => {
                   <div key={i} className="flex flex-col items-center group">
                     {skill.icon && (
                       <img
-                        src={skill.icon}
+                        src={isDarkMode && skill.iconDark ? skill.iconDark : skill.icon}
                         alt=""
                         className="w-16 h-16 object-contain mb-2 transition-transform duration-300 group-hover:scale-105"
                         loading="lazy"
