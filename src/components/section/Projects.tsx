@@ -10,8 +10,11 @@ import { ExternalLink, Code, Heart, ChevronLeft, ChevronRight } from 'lucide-rea
 import { socialLinks } from '../../config/socialLinks';
 import { lightStars, darkStars, specialStars } from '../../assets/stars';
 import { comingSoon } from '../../assets';
-import { debian, wedly, chatbotIDE, chatbotQuest, hardisGroup, faerun, 
-    sportify, sportifyWeb, mindmap, statR, tourmentin } from '../../assets/project_icons';
+import {
+  debian
+  //, wedly, chatbotIDE, chatbotQuest, hardisGroup, faerun,
+  //sportify, sportifyWeb, mindmap, statR, tourmentin
+} from '../../assets/project_icons';
 
 const Projects = () => {
   const { isDarkMode } = useDarkMode();
