@@ -503,7 +503,6 @@ const Projects = () => {
                     ))}
                   </div>
                   <div className="flex gap-3" style={{ marginTop: 'auto', paddingTop: '8px' }}>
-                    {/*
                     <Link to={project.detailsUrl} className="project-btn flex items-center gap-1" style={{ textDecoration: 'none', color: 'white' }} aria-label={`View ${project.title} project details`}>
                       <ExternalLink className="h-4 w-4" aria-hidden="true" />
                       Details
@@ -512,25 +511,6 @@ const Projects = () => {
                       <Code className="h-4 w-4" aria-hidden="true" />
                       Code
                     </a>
-                    */}
-                    {project.detailsUrl && (
-                      <Link to={project.detailsUrl} className="project-btn flex items-center gap-1" style={{ textDecoration: 'none', color: 'white' }} aria-label={`View ${project.title} project details`}>
-                        <ExternalLink className="h-4 w-4" aria-hidden="true" />
-                        {t({ fr: 'Détails', en: 'Details' })}
-                      </Link>
-                    )}
-                    {project.documentUrl && (
-                      <a href={project.documentUrl} target="_blank" rel="noopener noreferrer" className="project-btn flex items-center gap-1" style={{ textDecoration: 'none', color: 'white' }} aria-label={`View ${project.title} document`}>
-                        <ExternalLink className="h-4 w-4" aria-hidden="true" />
-                        {t({ fr: 'Document', en: 'Document' })}
-                      </a>
-                    )}
-                    {project.githubUrl && (
-                      <a href={project.githubUrl} className="project-btn-outline flex items-center gap-1" style={{ textDecoration: 'none' }} target="_blank" rel="noopener noreferrer" aria-label={`View ${project.title} source code on GitHub`}>
-                        <Code className="h-4 w-4" aria-hidden="true" />
-                        Code
-                      </a>
-                    )}
                   </div>
                 </CardContent>
               </Card>
