@@ -251,41 +251,18 @@ const Projects = () => {
     },
     */
     {
-      title: t({ fr: 'Installation et configuration d\'un serveur Debian', 
+      title: t({
+        fr: 'Installation et configuration d\'un serveur Debian',
         en: 'Installing and configuring a Debian server'
       }),
-      description: t({ 
-        fr: 'Déploiement d\'un serveur Debian 13 équipé d\'Apache, PostgreSQL et PHP fonctionnel et interrogeable depuis la machine hôte, et rédaction d\'un guide d\'installation en anglais', 
+      description: t({
+        fr: 'Déploiement d\'un serveur Debian 13 équipé d\'Apache, PostgreSQL et PHP fonctionnel et interrogeable depuis la machine hôte, et rédaction d\'un guide d\'installation en anglais',
         en: 'Deployment of a Debian 13 server equipped with Apache, PostgreSQL and PHP, which is fully functional and can be queried from the host machine, and the drafting of an installation guide in English'
       }),
       technologies: ["Linux", "Bash", "Communication"],
       icon: debian,
       detailsUrl: "/projects/project-one",
       githubUrl: socialLinks.repositories.projectOne
-    },
-    {
-      title: "Project Two",
-      description: "A brief description of your second project. Highlight the key features and what makes it unique.",
-      technologies: ["Python", "Flask", "PostgreSQL", "Docker"],
-      icon: comingSoon,
-      detailsUrl: "/projects/project-two",
-      githubUrl: socialLinks.repositories.projectTwo
-    },
-    {
-      title: "Project Three",
-      description: "A brief description of your third project. Highlight the key features and what makes it unique.",
-      technologies: ["JavaScript", "Express", "AWS", "Tailwind CSS"],
-      icon: comingSoon,
-      detailsUrl: "/projects/project-three",
-      githubUrl: socialLinks.repositories.projectThree
-    },
-    {
-      title: "Project Four",
-      description: "A brief description of your fourth project. Highlight the key features and what makes it unique.",
-      technologies: ["C++", "CMake", "OpenGL"],
-      icon: comingSoon,
-      detailsUrl: "/projects/project-four",
-      githubUrl: socialLinks.repositories.projectFour
     }
   ];
 
@@ -447,11 +424,11 @@ const Projects = () => {
           <div className="flex items-center justify-center gap-1 mb-4">
             <h2 className="text-4xl font-bold" style={{ color: isDarkMode ? themeColors.colors.white : themeColors.colors.pink[500] }}>
               {t({ fr: 'Projets', en: 'Projects' })}
-              </h2>
+            </h2>
             <Tooltip>
               <TooltipTrigger asChild>
-                <button 
-                  className="inline-flex items-center justify-center bg-transparent border-none outline-none focus:outline-none" 
+                <button
+                  className="inline-flex items-center justify-center bg-transparent border-none outline-none focus:outline-none"
                   style={{ minWidth: '44px', minHeight: '44px' }}
                   aria-label="Information about project icons"
                 >
@@ -470,10 +447,10 @@ const Projects = () => {
             </Tooltip>
           </div>
           <p className="text-center mb-12 text-lg text-gray-600 dark:text-gray-300">
-            {t({ 
-              fr: 'Voici quelques-uns des projets sur lesquels j\'ai travaillé récemment', 
-              en: 'Here are some of the projects I\'ve worked on recently' 
-              })}
+            {t({
+              fr: 'Voici quelques-uns des projets sur lesquels j\'ai travaillé récemment',
+              en: 'Here are some of the projects I\'ve worked on recently'
+            })}
           </p>
 
           {/* grid layout for project cards */}
@@ -526,6 +503,7 @@ const Projects = () => {
                     ))}
                   </div>
                   <div className="flex gap-3" style={{ marginTop: 'auto', paddingTop: '8px' }}>
+                    {/*
                     <Link to={project.detailsUrl} className="project-btn flex items-center gap-1" style={{ textDecoration: 'none', color: 'white' }} aria-label={`View ${project.title} project details`}>
                       <ExternalLink className="h-4 w-4" aria-hidden="true" />
                       Details
@@ -534,6 +512,25 @@ const Projects = () => {
                       <Code className="h-4 w-4" aria-hidden="true" />
                       Code
                     </a>
+                    */}
+                    {project.detailsUrl && (
+                      <Link to={project.detailsUrl} className="project-btn flex items-center gap-1" style={{ textDecoration: 'none', color: 'white' }} aria-label={`View ${project.title} project details`}>
+                        <ExternalLink className="h-4 w-4" aria-hidden="true" />
+                        {t({ fr: 'Détails', en: 'Details' })}
+                      </Link>
+                    )}
+                    {project.documentUrl && (
+                      <a href={project.documentUrl} target="_blank" rel="noopener noreferrer" className="project-btn flex items-center gap-1" style={{ textDecoration: 'none', color: 'white' }} aria-label={`View ${project.title} document`}>
+                        <ExternalLink className="h-4 w-4" aria-hidden="true" />
+                        {t({ fr: 'Document', en: 'Document' })}
+                      </a>
+                    )}
+                    {project.githubUrl && (
+                      <a href={project.githubUrl} className="project-btn-outline flex items-center gap-1" style={{ textDecoration: 'none' }} target="_blank" rel="noopener noreferrer" aria-label={`View ${project.title} source code on GitHub`}>
+                        <Code className="h-4 w-4" aria-hidden="true" />
+                        Code
+                      </a>
+                    )}
                   </div>
                 </CardContent>
               </Card>
@@ -561,11 +558,11 @@ const Projects = () => {
                         Coming Soon
                       </CardTitle>
                       <CardDescription className="text-gray-600 dark:text-gray-300 mt-2">
-                        {t({ 
-                          fr: 'D\'autres projets passionnants sont à venir ! Revenez bientôt pour découvrir ce sur quoi je vais travailler ensuite.', 
-                          en: 'More exciting projects on the way! Check back soon to see what I\'m working on next.' 
-                          })}
-                        
+                        {t({
+                          fr: 'D\'autres projets passionnants sont à venir ! Revenez bientôt pour découvrir ce sur quoi je vais travailler ensuite.',
+                          en: 'More exciting projects on the way! Check back soon to see what I\'m working on next.'
+                        })}
+
                       </CardDescription>
                     </div>
                   </div>
@@ -674,7 +671,7 @@ const Projects = () => {
           </div>
         </div>
       </TooltipProvider>
-      
+
       {/* Gradient overlay for smooth transition to next section */}
       <div
         className="absolute bottom-0 left-0 right-0 pointer-events-none"
