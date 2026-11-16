@@ -10,6 +10,8 @@ import { ExternalLink, Code, Heart, ChevronLeft, ChevronRight } from 'lucide-rea
 import { socialLinks } from '../../config/socialLinks';
 import { lightStars, darkStars, specialStars } from '../../assets/stars';
 import { comingSoon } from '../../assets';
+import { debian, wedly, chatbotIDE, chatbotQuest, hardisGroup, faerun, 
+    sportify, sportifyWeb, mindmap, statR, tourmentin } from '../../assets/project_icons';
 
 const Projects = () => {
   const { isDarkMode } = useDarkMode();
@@ -229,11 +231,32 @@ const Projects = () => {
 
   // project data - these are the main cards
   const projects = [
+    /*
     {
-      title: "Project One",
-      description: "A brief description of your first project. Highlight the key features and what makes it unique.",
-      technologies: ["React", "TypeScript", "Node.js", "MongoDB"],
-      icon: comingSoon,
+    title: t({ 
+    fr: 'Mon projet', 
+    en: 'My project' 
+    }),
+    description: t({
+      fr: 'Description courte de ce que fait le projet.',
+      en: 'Short description of what the project does.',
+    }),
+    technologies: ["React", "TypeScript"],
+    icon: comingSoon,
+    detailsUrl: "/projects/mon-projet",
+    githubUrl: "https://github.com/sarah-sellam/mon-repo"
+    },
+    */
+    {
+      title: t({ fr: 'Installation et configuration d\'un serveur Debian', 
+        en: 'Installing and configuring a Debian server'
+      }),
+      description: t({ 
+        fr: 'Déploiement d\'un serveur Debian 13 équipé d\'Apache, PostgreSQL et PHP fonctionnel et interrogeable depuis la machine hôte, et rédaction d\'un guide d\'installation en anglais', 
+        en: 'Deployment of a Debian 13 server equipped with Apache, PostgreSQL and PHP, which is fully functional and can be queried from the host machine, and the drafting of an installation guide in English'
+      }),
+      technologies: ["Linux", "Bash", "Communication"],
+      icon: debian,
       detailsUrl: "/projects/project-one",
       githubUrl: socialLinks.repositories.projectOne
     },
